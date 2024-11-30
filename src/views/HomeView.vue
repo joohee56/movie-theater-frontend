@@ -4,7 +4,7 @@
 			<i class="fa-solid fa-computer-mouse"></i>
 		</div>
 		<div class="movies-container">
-			<div class="box-office-text">박스오피스</div>
+			<div class="box-office-text">박스오피스!</div>
 			<div>
 				<router-link :to="{name: 'movie'}" class="more-movie-link">더 많은 영화보기 + </router-link>
 			</div>
