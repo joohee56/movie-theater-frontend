@@ -106,7 +106,6 @@ export default {
         description: "",
         releaseDate: "",
         durationMinutes: 0,
-        posterImage: null,
         posterImageUrl: "",
         ageRating: "",
         director: "",
@@ -115,18 +114,18 @@ export default {
         genreTypes: "",
         actors: "",
       },
+      posterImage: null,
       posterPreview: "",
     };
   },
   methods: {
     selectPosterImage() {
-      this.movie.posterImage = this.$refs.poster.files[0];
+      this.posterImage = this.$refs.poster.files[0];
       this.posterPreview = URL.createObjectURL(this.movie.posterImage);
     },
     async submit() {
       var formData = new FormData();
       this.addObjectFormData(formData, this.movie);
-
       const response = await createMovie(formData);
       if (response.code == 200) {
         alert("완료되었습니다. 아이디:" + response.data.id);
@@ -135,6 +134,9 @@ export default {
     addObjectFormData(formData, movie) {
       for (const key in movie) {
         formData.append(key, movie[key]);
+      }
+      if (this.posterImage != null) {
+        formData.append("posterImage", this.posterImage);
       }
     },
   },
