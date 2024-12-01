@@ -2,7 +2,7 @@ import axios from "axios";
 axios.defaults.withCredentials = true;
 
 const config = {
-  baseUrl: "http://3.39.230.50:8080/api/v1",
+  baseUrl: "http://api.th3-m0v1e.com:8080/api/v1",
 };
 
 function jsonApiInstance() {

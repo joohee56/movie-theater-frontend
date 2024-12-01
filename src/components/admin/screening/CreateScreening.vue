@@ -98,6 +98,7 @@ export default {
       this.selectedTheater.id = theaterId;
       this.selectedTheater.index = index;
 
+      this.resetHall();
       this.fetchHalls();
     },
     hallSelect(hallId, index) {
