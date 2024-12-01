@@ -157,6 +157,8 @@ export default {
           "선택하신 좌석은 이미 판매가 진행중입니다．\n다른 좌석을 선택해주세요."
         );
         return;
+      } else {
+        alert(response.message);
       }
       sessionStorage.setItem("bookingId", response.data);
       sessionStorage.setItem("seatIds", JSON.stringify(seatIds));

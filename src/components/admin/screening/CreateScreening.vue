@@ -123,6 +123,8 @@ export default {
       const response = await createScreening(this.screening);
       if (response.code == 200) {
         alert("상영시간 생성 완료 " + response.data.id);
+      } else {
+        alert(response.message);
       }
     },
     resetTheater() {

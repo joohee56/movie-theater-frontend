@@ -62,6 +62,8 @@ export default {
       const response = await createTheater(this.theater);
       if (response.code == 200) {
         alert("영화관 생성 완료 " + response.data.id);
+      } else {
+        alert(response.message);
       }
     },
   },

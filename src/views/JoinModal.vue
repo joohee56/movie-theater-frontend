@@ -55,6 +55,8 @@ export default {
         alert(response.data.name + "님 반갑습니다.");
         this.close();
         this.SHOW_LOGIN_MODAL();
+      } else {
+        alert(response.message);
       }
     },
   },

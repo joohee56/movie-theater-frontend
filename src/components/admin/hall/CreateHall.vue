@@ -119,8 +119,10 @@ export default {
       const response = await createHallWithSeats(this.hall);
       if (response.code == 200) {
         alert("상영관 생성 완료 " + response.data.hallId);
+        this.fetchHalls();
+      } else {
+        alert(response.message);
       }
-      this.fetchHalls();
     },
     resetTheater() {
       this.selectedTheater.id = null;

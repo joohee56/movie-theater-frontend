@@ -157,10 +157,14 @@ export default {
                   name: "bookingSuccess",
                   params: { bookingId: bookingResponse.data.id },
                 });
+              } else {
+                alert(response.message);
               }
             }
           }
         );
+      } else {
+        alert(response.message);
       }
     },
   },

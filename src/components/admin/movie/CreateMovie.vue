@@ -129,6 +129,8 @@ export default {
       const response = await createMovie(formData);
       if (response.code == 200) {
         alert("완료되었습니다. 아이디:" + response.data.id);
+      } else {
+        alert(response.message);
       }
     },
     addObjectFormData(formData, movie) {
