@@ -49,6 +49,9 @@ body {
   padding: 0 50px;
   margin: 0 auto;
 }
+.main-routerview-container {
+  padding-bottom: 50px;
+}
 .divider {
   border-bottom: 1px solid lightgray;
   transform: scaleY(0.5);
