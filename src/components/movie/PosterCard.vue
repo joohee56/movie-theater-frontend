@@ -77,7 +77,7 @@ export default {
 }
 .movie-title {
   display: inline;
-  font-size: 17px;
+  font-size: 18px;
 }
 .age-rating {
   display: inline;
@@ -101,7 +101,7 @@ export default {
   background-color: var(--age-19-color);
 }
 .movie-releaseDate {
-  font-size: 13px;
+  font-size: 15px;
   margin: 10px 0;
 }
 .booking-btn {

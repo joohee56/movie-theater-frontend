@@ -46,6 +46,7 @@ body {
 .navbar-container,
 .main-routerview-container {
   max-width: var(--max-width);
+  padding: 0 50px;
   margin: 0 auto;
 }
 .divider {
