@@ -32,9 +32,13 @@
 				</div>
 			</div>
 			<div>
-				<div>포스터 이미지</div>
+				<div>포스터 이미지 파일</div>
 				<input type="file" ref="poster" @change="selectPosterImage">
 				<img v-if="posterPreview != ''" :src="posterPreview">
+			</div>
+			<div>
+				<div>또는 포스터 이미지 Url</div>
+				<input type="text" v-model="movie.posterImageUrl">
 			</div>
 			<div>
 				<div>영화 관람 등급</div>
@@ -103,6 +107,7 @@ export default {
         releaseDate: "",
         durationMinutes: 0,
         posterImage: "",
+        posterImageUrl: "",
         ageRating: "",
         director: "",
         screeningType: "",
