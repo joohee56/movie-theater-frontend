@@ -106,7 +106,7 @@ export default {
         description: "",
         releaseDate: "",
         durationMinutes: 0,
-        posterImage: "",
+        posterImage: null,
         posterImageUrl: "",
         ageRating: "",
         director: "",
