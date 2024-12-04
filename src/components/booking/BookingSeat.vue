@@ -152,7 +152,11 @@ export default {
         seatIds: seatIds,
       };
       const response = await holdBooking(bookingHoldRequest);
-      if (response.code !== 200) {
+      if (response.code === 200) {
+        sessionStorage.setItem("bookingId", response.data);
+        sessionStorage.setItem("seatIds", JSON.stringify(seatIds));
+        this.$router.push({ name: "paymentView" });
+      } else if (response.code === 400) {
         alert(
           "선택하신 좌석은 이미 판매가 진행중입니다．\n다른 좌석을 선택해주세요."
         );
@@ -160,9 +164,6 @@ export default {
       } else {
         alert(response.message);
       }
-      sessionStorage.setItem("bookingId", response.data);
-      sessionStorage.setItem("seatIds", JSON.stringify(seatIds));
-      this.$router.push({ name: "paymentView" });
     },
     decreaseAdultSeatCount() {
       if (this.adultSeatCount <= 0) {
