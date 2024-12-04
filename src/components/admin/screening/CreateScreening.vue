@@ -30,7 +30,7 @@
 			<div>
 				<div>상영 시간</div>
 				<div>
-					<input type="text" v-model="screening.startTime">
+					<input type="text" v-model="screening.startTimes">
 				</div>
 			</div>
 		</div>
@@ -50,7 +50,7 @@ export default {
       screening: {
         movieId: null,
         hallId: null,
-        startTime: "",
+        startTimes: "",
       },
       movies: [],
       regions: [],
@@ -119,13 +119,18 @@ export default {
       }
     },
     async submit() {
+      this.screening.startTimes = this.convertToList();
       console.log(this.screening);
+
       const response = await createScreening(this.screening);
       if (response.code == 200) {
         alert("상영시간 생성 완료 " + response.data.id);
       } else {
         alert(response.message);
       }
+    },
+    convertToList() {
+      return this.screening.startTimes.split(",").map((time) => time.trim());
     },
     resetTheater() {
       this.selectedTheater.id = null;
